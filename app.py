@@ -55,24 +55,15 @@ def predecir():
 
     return jsonify({'resultado': valores_prediccion})
 
-@app.route('/post', methods=['POST'])
-def post():
-    datos = request.json
-    name = datos['name']
-    saludo = "Hello " + name
-    return saludo
-
 @app.route('/', methods=['GET'])
 def hello_world():
     return "Hello World"
 
-@app.route('/hello/<name>', methods=['GET'])
+@app.route('/<name>', methods=['GET'])
 def hello_name(name):
-    
     if not name:
         name = "?"
-
-    return "Hello Jean"
+    return "Hello "+ name
 
 
 if __name__ == '__main__':
