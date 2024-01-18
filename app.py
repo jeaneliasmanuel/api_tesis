@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)  # Esto habilitará CORS para todas las rutas por defecto
 
 # Cargar el modelo TensorFlow
-modelo = tf.keras.models.load_model('az_detectitonv2.h5')
+modelo = tf.keras.models.load_model('az_detectiton.h5')
 
 def preparar_imagen(base64_img):
     # Convertir base64 a bytes
