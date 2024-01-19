@@ -1,0 +1,5 @@
+scanners: vuln, secret, config
+severity: 'CRITICAL,HIGH'
+exit-code: 1
+format: 'sarif'
+output: 'trivy-results.sarif'
