@@ -61,9 +61,9 @@ def hello_world():
 
 @app.route('/<name>', methods=['GET'])
 def hello_name(name):
-    if not name:
-        name = "?"
-    return "Hola "+ name + ", te ves muy bien <3"
+    name = name.lower()
+    name = name.capitalize()
+    return "Hola " + name + ", te ves muy bien <3"
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - branch-one
 
 jobs:
   build-and-push:
@@ -54,13 +53,3 @@ jobs:
         bump_version_scheme: minor
         tag_prefix: "v"
         release_name: "Release <RELEASE_VERSION>"
-
-    - name: Build and Push Docker image
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        file: ./Dockerfile
-        push: true
-        tags: |
-          ghcr.io/${{ github.repository }}/api:latest
-          ghcr.io/${{ github.repository }}/api:${{ steps.release.outputs.tag_name }}
