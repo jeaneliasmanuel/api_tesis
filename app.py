@@ -57,14 +57,13 @@ def predecir():
 
 @app.route('/', methods=['GET'])
 def hello_world():
-    return "Hello World"
+    return "Bienvenido a mi primera API"
 
 @app.route('/<name>', methods=['GET'])
 def hello_name(name):
     if not name:
         name = "?"
-    return "Hello "+ name
-
+    return "Hola "+ name + ", te ves muy bien <3"
 
 if __name__ == '__main__':
     app.run(debug=True)
